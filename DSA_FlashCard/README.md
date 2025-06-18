@@ -56,6 +56,10 @@ GIF created with Built-in Screenshort Tool
 ## Notes
 
 Describe any challenges encountered while building the app.
+- Managing the flip state to ensure smooth card flipping and resetting on navigation.
+- Creating a smooth 3D flip animation with CSS without glitches.
+- Keeping the flashcard centered and responsive on different screen sizes.
+- Organizing flashcard data and imports properly as the project grew.
 
 ## License
 
