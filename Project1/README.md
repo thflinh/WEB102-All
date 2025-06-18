@@ -34,9 +34,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of the implemented required features:
 
-
-https://github.com/user-attachments/assets/cfc6d8b3-1257-4410-b0ae-08ec21113a4d
-
+https://github.com/user-attachments/assets/ff967b20-609b-4b62-97f0-c5f6c38d6445
 
 <img src='https://i.imgur.com/your-final-gif.gif' title='Video Walkthrough' alt='Video Walkthrough' />
 
