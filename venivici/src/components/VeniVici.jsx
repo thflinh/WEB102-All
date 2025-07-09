@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { fetchRandomItem } from '../api/stardewApi'
+import { fetchRandomItem, getItemByName } from '../api/stardewApi'
 import BanList from './BanList'
+import SearchBar from './SearchBar'
 import '../App.css'
 
 export default function VeniVici() {
@@ -10,7 +11,10 @@ export default function VeniVici() {
   const [loading, setLoading] = useState(false)
   const [error, setError]     = useState(null)
 
-  const loadNext = async () => {
+  // search state
+  const [query, setQuery]     = useState('')
+
+  const loadRandom = async () => {
     if (loading) return
     setLoading(true)
     setError(null)
@@ -18,10 +22,23 @@ export default function VeniVici() {
       const next = await fetchRandomItem(banList)
       if (item) setHistory(h => [item, ...h])
       setItem(next)
+      setQuery('')  // clear any search
     } catch (err) {
       setError(err.message)
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleSearch = () => {
+    if (!query.trim()) return
+    const found = getItemByName(query)
+    if (found) {
+      if (item) setHistory(h => [item, ...h])
+      setItem(found)
+      setError(null)
+    } else {
+      setError(`No item named “${query}” found.`)
     }
   }
 
@@ -34,9 +51,15 @@ export default function VeniVici() {
 
   return (
     <div className="venivici-wrapper">
-      {/* LEFT COLUMN */}
+      {/* LEFT COLUMN: Search, Card + Discover */}
       <div className="main-section">
-        {error && <div className="error">Error: {error}</div>}
+        <SearchBar
+          value={query}
+          onChange={setQuery}
+          onSubmit={handleSearch}
+        />
+
+        {error && <div className="error">{error}</div>}
 
         {item && (
           <div className="card">
@@ -47,7 +70,7 @@ export default function VeniVici() {
             <p className="desc">{item.description}</p>
 
             <div className="attrs">
-              {['type', 'season', 'id'].map(attr => {
+              {['type','season','id'].map(attr => {
                 const val = item[attr]
                 return (
                   <button
@@ -55,7 +78,7 @@ export default function VeniVici() {
                     className={banList.includes(val) ? 'banned' : ''}
                     onClick={() => toggleBan(val)}
                   >
-                    {attr[0].toUpperCase() + attr.slice(1)}: {val}
+                    {attr.charAt(0).toUpperCase()+attr.slice(1)}: {val}
                   </button>
                 )
               })}
@@ -67,19 +90,19 @@ export default function VeniVici() {
 
         <button
           className="discover-btn"
-          onClick={loadNext}
+          onClick={loadRandom}
           disabled={loading}
         >
           {loading ? 'Discovering…' : 'Discover'}
         </button>
       </div>
 
-      {/* RIGHT COLUMN */}
+      {/* RIGHT COLUMN: History */}
       {history.length > 0 && (
         <section className="history-section">
           <h2>What have we seen so far?</h2>
           <div className="history-grid">
-            {history.map((it, i) => (
+            {history.map((it,i) => (
               <img
                 key={`${it.id}-${i}`}
                 src={it.image}

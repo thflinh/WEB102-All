@@ -1,29 +1,26 @@
-// // src/api/stardewApi.js
-import items from '../data/items.json';
+// src/api/stardewApi.js
+import items from '../data/items.json'
 
 /**
- * Fetch one random Stardew item, excluding any whose
- * type, season, or id appears in the banList.
- *
- * @param {string[]} banList  list of banned values (type, season, or id)
- * @returns {Promise<Object>} the selected item
+ * Return one random Stardew item, excluding banned type/season/id.
  */
 export async function fetchRandomItem(banList = []) {
-  // 2. Filter out banned values
   const filtered = items.filter(item =>
     !banList.includes(item.type) &&
     !banList.includes(item.season) &&
     !banList.includes(item.id)
   )
-
-  // 3. If nothing remains, throw
-  if (filtered.length === 0) {
-    throw new Error(
-      'No items left after applying your ban list. Please clear some bans to continue!'
-    )
+  if (!filtered.length) {
+    throw new Error('No items left… clear some bans.')
   }
+  return filtered[Math.floor(Math.random() * filtered.length)]
+}
 
-  // 4. Pick one at random and return
-  const idx = Math.floor(Math.random() * filtered.length)
-  return filtered[idx]
+/**
+ * Return the item whose name exactly matches (case‐insensitive), or null.
+ * @param {string} name 
+ */
+export function getItemByName(name) {
+  const target = name.trim().toLowerCase()
+  return items.find(item => item.name.toLowerCase() === target) || null
 }

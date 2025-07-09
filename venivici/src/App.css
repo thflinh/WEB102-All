@@ -200,3 +200,17 @@ body {
   margin-bottom: 0.75rem;
   font-size: 0.85rem;
 }
+/* Search input styling */
+.search-input {
+  width: 220px;
+  padding: 0.4rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+.search-input:focus {
+  outline: none;
+  border-color: #1f78e3;
+}
