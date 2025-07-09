@@ -1,0 +1,202 @@
+/* ========================
+   Global / Layout
+   ======================== */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #70c5e8;    /* a nice Stardew-blue sky */
+  display: flex;
+  align-items: flex-start; /* allow header + content to stack */
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 1rem;       /* small top padding so header isn't flush */
+}
+
+/* ===== Site Header ===== */
+.site-header {
+  text-align: center;
+  margin-bottom: 0.5rem;  /* tighten space after header */
+}
+.site-header h1 {
+  font-size: 1.75rem;      /* down from 2.5rem */
+  margin: 0.25rem 0;
+  color: #333333;
+}
+.site-header h3 {
+  font-size: 1rem;         /* down from 1.25rem */
+  margin-bottom: 0.75rem;
+  color: #555555;
+}
+
+/* ========= Layout for card + history ========= */
+.venivici-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;              /* more breathing room horizontally */
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* left side stacks card over button */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* constrain history column */
+.history-section {
+  max-width: 180px;
+}
+
+/* ========================
+   Card Container (smaller)
+   ======================== */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 220px;           /* reduced width */
+  padding: 0.75rem;       /* less padding */
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;  /* space before Discover */
+}
+
+/* image wrapper to center & fix height */
+.image-container {
+  width: 100%;
+  height: 100px;          /* fixed, smaller height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  /* padding-top: 0.5rem; */
+}
+.image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* ========================
+   Text & Description
+   ======================== */
+.card h2 {
+  margin: 0.25rem 0 0.25rem;
+  font-size: 1.2rem;
+  color: #1f2937;
+}
+.desc {
+  font-size: 0.8rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+/* ========================
+   Attribute Buttons
+   ======================== */
+.attrs {
+  margin-bottom: 0.75rem;
+}
+.attrs button {
+  margin: 0.2rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.75rem;
+  border: 1px solid #aaa;
+  background: #fafafa;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.attrs button:hover { background: #eee; }
+.attrs button.banned {
+  background: #ffe5e5;
+  border-color: #f99;
+  color: #b00;
+}
+
+/* ========================
+   Discover Button (condensed)
+   ======================== */
+.discover-btn {
+  width: 220px;          /* match card width */
+  padding: 0.4rem;
+  background: #1f78e3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.discover-btn:hover:not(:disabled) { background: #3f9ffb; }
+.discover-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================
+   Ban List
+   ======================== */
+.ban-list {
+  margin-bottom: 0.75rem;
+}
+.ban-list button {
+  margin: 0.2rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+.ban-list button:hover { background: #b91c1c; }
+
+/* ========================
+   History Grid
+   ======================== */
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1.5rem, 1fr));
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.history-grid img {
+  height: 1.5rem;
+  object-fit: cover;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.history-grid img:hover { transform: scale(1.1); }
+
+/* ========================
+   Clear History Button
+   ======================== */
+.clear-btn {
+  background: #6b7280;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.clear-btn:hover { background: #4b5563; }
+
+/* ========================
+   Error Message
+   ======================== */
+.error {
+  color: #b91c1c;
+  background: #ffe5e5;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
