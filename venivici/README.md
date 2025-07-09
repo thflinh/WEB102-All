@@ -44,16 +44,13 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-
-https://github.com/user-attachments/assets/c32a1c06-1129-464c-abb5-ba6a7684e7d0
-
-
+https://github.com/user-attachments/assets/1f0f15f3-7487-4e77-8a19-126dc8b966e0
 Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with Screenshort Tools  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
