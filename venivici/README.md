@@ -45,6 +45,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 https://github.com/user-attachments/assets/1f0f15f3-7487-4e77-8a19-126dc8b966e0
+
 Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
