@@ -1,0 +1,82 @@
+[
+  {
+    "id": "salmonberry",
+    "name": "Salmonberry",
+    "type": "Forage",
+    "season": "Spring",
+    "description": "A sweet, pink berry that appears early in Spring.",
+    "image": "/Salmonberry.png"
+  },
+  {
+    "id": "strawberry",
+    "name": "Strawberry",
+    "type": "Crop",
+    "season": "Spring",
+    "description": "A juicy crop sold at the Egg Festival.",
+    "image": "/Strawberry.png"
+  },
+  {
+    "id": "carp",
+    "name": "Carp",
+    "type": "Fish",
+    "season": "All",
+    "description": "A common freshwater fish.",
+    "image": "/Carp.png"
+  },
+  {
+    "id": "blueberry",
+    "name": "Blueberry",
+    "type": "Crop",
+    "season": "Summer",
+    "description": "A sweet summer fruit that keeps producing.",
+    "image": "/Blueberry.png"
+  },
+  {
+    "id": "hot-pepper",
+    "name": "Hot Pepper",
+    "type": "Crop",
+    "season": "Summer",
+    "description": "A spicy pepper that adds heat to dishes.",
+    "image": "/Hot_Pepper.png"
+  },
+  {
+    "id": "pumpkin",
+    "name": "Pumpkin",
+    "type": "Crop",
+    "season": "Fall",
+    "description": "A large orange vegetable perfect for fall.",
+    "image": "/Pumpkin.png"
+  },
+  {
+    "id": "blackberry",
+    "name": "Blackberry",
+    "type": "Forage",
+    "season": "Fall",
+    "description": "A dark, sweet berry found in the wild.",
+    "image": "/Blackberry.png"
+  },
+  {
+    "id": "salmon",
+    "name": "Salmon",
+    "type": "Fish",
+    "season": "Fall",
+    "description": "A large fish that swims upstream.",
+    "image": "/Salmon.png"
+  },
+  {
+    "id": "crystal-fruit",
+    "name": "Crystal Fruit",
+    "type": "Forage",
+    "season": "Winter",
+    "description": "A rare fruit that glows with inner light.",
+    "image": "/Crystal_Fruit.png"
+  },
+  {
+    "id": "cave-carrot",
+    "name": "Cave Carrot",
+    "type": "Forage",
+    "season": "All",
+    "description": "A starchy root found in caves.",
+    "image": "/Cave_Carrot.png"
+  }
+]
