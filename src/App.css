@@ -1,0 +1,597 @@
+/* App.css - Enhanced Brewery-inspired Theme with Sidebar */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff8e1;
+  background-image: url('/soft_beer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  font-family: 'Georgia', serif;
+  color: #3e2723;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(255, 248, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  background-color: rgba(109, 76, 65, 0.95);
+  color: #fff8e1;
+  padding: 1.5rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #8d6e63;
+  padding-bottom: 1rem;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffcc80;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.sidebar-home-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ffe0b2;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.sidebar-home-link:hover {
+  color: #ffcc80;
+  text-decoration: underline;
+}
+
+.sidebar-section {
+  margin-bottom: 2rem;
+}
+
+.sidebar-section h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  color: #ffb74d;
+  border-bottom: 1px solid rgba(255, 183, 77, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.sidebar-stat {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+  padding: 0.5rem;
+  background-color: rgba(255, 183, 77, 0.1);
+  border-radius: 4px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #ffe0b2;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #ffcc80;
+}
+
+.sidebar-type {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.8rem;
+  background-color: rgba(255, 204, 128, 0.15);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.type-name {
+  color: #ffe0b2;
+  text-transform: capitalize;
+}
+
+.type-count {
+  background-color: #ffb74d;
+  color: #3e2723;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  min-width: 25px;
+  text-align: center;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.8rem;
+  background-color: rgba(255, 183, 77, 0.2);
+  border-radius: 6px;
+  color: #ffe0b2;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 183, 77, 0.3);
+  color: #ffcc80;
+}
+
+.nav-link.active {
+  background-color: #ffb74d;
+  color: #3e2723;
+  font-weight: bold;
+  border: 1px solid #ff8a65;
+}
+
+.sidebar-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #d7ccc8;
+  margin: 0;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 183, 77, 0.3);
+  text-align: center;
+}
+
+.sidebar-footer p {
+  margin: 0;
+  color: #ffcc80;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.dashboard-content {
+  max-width: 100%;
+}
+
+/* Header and Title */
+.header {
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #8d6e63;
+  padding-bottom: 0.5rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #6d4c41;
+  font-weight: bold;
+  text-shadow: 1px 1px #d7ccc8;
+  animation: titleGlow 4s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 1;
+}
+
+.header h1::after {
+  content: '🍺';
+  display: inline-block;
+  margin-left: 0.5rem;
+  animation: beerSpin 2s linear infinite;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 1px 1px #d7ccc8, 0 0 10px rgba(255, 183, 77, 0.5);
+  }
+  100% {
+    text-shadow: 1px 1px #d7ccc8, 0 0 20px rgba(255, 183, 77, 0.8), 0 0 30px rgba(255, 183, 77, 0.6);
+  }
+}
+
+@keyframes beerSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Summary Statistics */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-item {
+  background-color: #ffcc80;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-weight: bold;
+  border: 1px solid #bcaaa4;
+}
+
+/* Controls: Search and Filter */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input,
+.filter-select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #a1887f;
+  border-radius: 4px;
+  min-width: 220px;
+  background-color: #fff3e0;
+  color: #4e342e;
+}
+
+.search-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-color: #ffb74d;
+  box-shadow: 0 0 6px rgba(255, 183, 77, 0.7);
+}
+
+/* Data Insights Section */
+.insights-container {
+  background-color: #fffde7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #d7ccc8;
+  border-left: 5px solid #ffb74d;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #6d4c41;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.insight-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4e342e;
+  margin: 0;
+}
+
+/* Chart Containers */
+.chart-container {
+  background-color: #fffde7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #d7ccc8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chart-title {
+  font-size: 1.5rem;
+  color: #6d4c41;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chart-description {
+  font-size: 1rem;
+  color: #5d4037;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* Table Container */
+.table-container {
+  background-color: #fffde7;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #d7ccc8;
+}
+
+/* Brewery Table */
+.brewery-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background-color: transparent;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.brewery-table th,
+.brewery-table td {
+  text-align: left;
+  padding: 0.9rem;
+  border-bottom: 1px solid #ffe0b2;
+}
+
+.brewery-table th {
+  background-color: #ffb74d;
+  font-weight: bold;
+  color: #3e2723;
+  text-shadow: 0.5px 0.5px #ffe082;
+}
+
+.brewery-table tbody tr:hover {
+  background-color: #ffe0b2;
+  transition: background-color 0.2s ease;
+}
+
+/* Brewery Links */
+.brewery-link {
+  color: #6d4c41;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.brewery-link:hover {
+  color: #3e2723;
+  text-decoration: underline;
+}
+
+/* Back Button */
+.back-button {
+  background-color: #ffb74d;
+  color: #3e2723;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.back-button:hover {
+  background-color: #ffa726;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Detail Card */
+.detail-card {
+  background-color: #fffde7;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid #d7ccc8;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  color: #6d4c41;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px #d7ccc8;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.detail-section {
+  background-color: #fff3e0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #bcaaa4;
+}
+
+.detail-item {
+  margin: 1rem 0;
+  fontSize: 1.1rem;
+  line-height: 1.5;
+  color: #4e342e;
+}
+
+.detail-item strong {
+  color: #3e2723;
+  display: inline-block;
+  min-width: 120px;
+}
+
+/* Contact Links */
+.contact-link {
+  color: #6d4c41;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #3e2723;
+  text-decoration: underline;
+}
+
+/* Fun Facts Section */
+.fun-facts-section {
+  background: linear-gradient(135deg, #ffcc80 0%, #ffb74d 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #bf7e4f;
+  margin-top: 1rem;
+}
+
+.fun-fact {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+  color: #3e2723;
+  font-weight: 500;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 2.5rem 0;
+  color: #5d4037;
+  font-style: italic;
+}
+
+/* Taproom Footer */
+.taproom-footer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 3px solid #8d6e63;
+}
+
+.taproom-banner {
+  text-align: center;
+  background: linear-gradient(135deg, #ffcc80 0%, #ffb74d 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #bf7e4f;
+  position: relative;
+  overflow: hidden;
+}
+
+.taproom-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.1) 10px,
+    rgba(255, 255, 255, 0.1) 20px
+  );
+  pointer-events: none;
+}
+
+.taproom-banner h3 {
+  font-size: 1.8rem;
+  color: #3e2723;
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.taproom-banner p {
+  font-size: 1.1rem;
+  color: #4e342e;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+.footer-decorations {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-decorations span {
+  animation: bounce 2s infinite;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+.footer-decorations span:nth-child(1) { --i: 0; }
+.footer-decorations span:nth-child(2) { --i: 1; }
+.footer-decorations span:nth-child(3) { --i: 2; }
+.footer-decorations span:nth-child(4) { --i: 3; }
+.footer-decorations span:nth-child(5) { --i: 4; }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .stats {
+    flex-direction: column;
+  }
+  
+  .controls {
+    flex-direction: column;
+  }
+  
+  .search-input,
+  .filter-select {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .brewery-table {
+    font-size: 0.9rem;
+  }
+  
+  .brewery-table th,
+  .brewery-table td {
+    padding: 0.6rem;
+  }
+}
