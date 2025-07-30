@@ -1,0 +1,89 @@
+.player-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #F5E6D3, #E8D5B7);
+    border-radius: 15px;
+    border: 2px solid #8B4513;
+}
+
+.detail-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2E7D32;
+}
+
+.detail-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+}
+
+.detail-header h2 {
+    margin: 0;
+    color: #4A4A4A;
+    font-size: 1.8em;
+}
+
+.detail-section h3 {
+    color: #2E7D32;
+    border-bottom: 2px solid #8B4513;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.profile-item {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #D4B08A;
+}
+
+.profile-item strong {
+    display: block;
+    color: #2E7D32;
+    margin-bottom: 5px;
+}
+
+.profile-item p {
+    margin: 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.detail-actions {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.edit-btn, .back-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.edit-btn {
+    background-color: #FF9800;
+    color: white;
+}
+
+.back-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.edit-btn:hover, .back-btn:hover {
+    opacity: 0.8;
+}

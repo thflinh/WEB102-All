@@ -1,0 +1,51 @@
+.player-card {
+    border: 2px solid #8B4513;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    background: linear-gradient(135deg, #F5E6D3, #E8D5B7);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-header h3 {
+    margin: 0 0 5px 0;
+    color: #2E7D32;
+}
+
+.card-header h4 {
+    margin: 0 0 15px 0;
+    color: #4A4A4A;
+}
+
+.card-content p {
+    margin: 8px 0;
+    color: #333;
+}
+
+.card-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.view-btn, .edit-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.view-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #FF9800;
+    color: white;
+}
+
+.view-btn:hover, .edit-btn:hover {
+    opacity: 0.8;
+}
